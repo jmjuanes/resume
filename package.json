@@ -1,0 +1,23 @@
+{
+    "name": "josemi-resume",
+    "description": "Public resume of Josemi",
+    "version": "0.1.0",
+    "type": "module",
+    "private": true,
+    "license": "MIT",
+    "homepage": "https://resume.josemi.xyz/",
+    "author": "Josemi <hello@josemi.xyz>",
+    "scripts": {
+        "build": "mkdir -p www && node scripts/build.js",
+        "postbuild": "cp node_modules/lowcss/low.css www/ && cp node_modules/@josemi-icons/svg/sprite.svg www/ && cp public/* www/",
+        "clean": "rm -rf www"
+    },
+    "dependencies": {
+        "@josemi-icons/svg": "^0.6.1",
+        "lowcss": "^0.24.0"
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0",
+        "mikel": "^0.10.0"
+    }
+}

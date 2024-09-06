@@ -1,0 +1,9 @@
+## node stuff
+package-lock.json
+yarn.lock
+node_modules
+
+## application files
+data.yml
+data.json
+www
