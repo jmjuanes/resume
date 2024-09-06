@@ -24,14 +24,14 @@ const getData = () => {
         updated_at: getUpdatedDate(),
     };
     // 1. check if resume data has been provided via env variable
-    if (!!process.env.RESUME_DATA) {
-        Object.assign(data, yaml.load(process.env.RESUME_DATA));
+    if (!!process.env.RESUME) {
+        Object.assign(data, yaml.load(process.env.RESUME));
     }
     // 2. check if we have a data.yml file
     else if (fs.existsSync(dataPath)) {
         Object.assign(data, yaml.load(fs.readFileSync(dataPath, "utf8")));
     }
-    //return parsed data
+    // return parsed data
     return data;
 };
 
