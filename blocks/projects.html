@@ -19,11 +19,11 @@ fields:
       - name: "url"
         type: "text"
         description: "URL or link to the project (if available)."
-      - name: "githubUrl"
+      - name: "repository_url"
         type: "text"
-        description: "GitHub URL or repository link (if available)."
+        description: "URL or link to the project's repository (if available)."
 ---
-<div class="" data-block-id="skills">
+<div class="" data-block-id="projects">
     <div class="mb-4">
         <div class="flex items-center gap-2 w-full">
             <div class="flex items-center text-4xl">
@@ -56,12 +56,12 @@ fields:
                 <div class="font-bold text-xs group-hover:underline">{{url}}</div>
             </a>
             {{/if}}
-            {{#if githubUrl}}
-            <a href="{{githubUrl}}" target="_blank" class="flex items-center gap-1 group">
+            {{#if repository_url}}
+            <a href="{{repository_url}}" target="_blank" class="flex items-center gap-1 group">
                 <div class="flex items-center text-sm">
                     <svg width="1em" height="1em"><use xlink:href="/sprite.svg#code"></use></svg>
                 </div>
-                <div class="font-bold text-xs group-hover:underline">{{githubUrl}}</div>
+                <div class="font-bold text-xs group-hover:underline">{{repository_url}}</div>
             </a>
             {{/if}}
         </div>
