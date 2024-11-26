@@ -1,0 +1,70 @@
+---
+name: "Side Projects"
+description: "List your side projects, personal projects, or open-source contributions."
+icon: "code"
+fields:
+  - name: "items"
+    type: "list"
+    description: "List of side projects or personal projects."
+    fields:
+      - name: "title"
+        type: "text"
+        description: "Title or name of the project."
+      - name: "description"
+        type: "textarea"
+        description: "Brief description or summary of the project."
+      - name: "keywords"
+        type: "tags"
+        description: "List of tags or keywords."
+      - name: "url"
+        type: "text"
+        description: "URL or link to the project (if available)."
+      - name: "githubUrl"
+        type: "text"
+        description: "GitHub URL or repository link (if available)."
+---
+<div class="" data-block-id="skills">
+    <div class="mb-4">
+        <div class="flex items-center gap-2 w-full">
+            <div class="flex items-center text-4xl">
+                <svg width="1em" height="1em"><use xlink:href="sprite.svg#code"></use></svg>
+            </div>
+            <div class="font-bold text-3xl">Projects</div>
+        </div>
+    </div>
+    {{#each items}}
+    <div class="mb-6">
+        <div class="font-bold">{{title}}</div>
+        {{#if description}}
+        <div class="mb-2 text-sm text-justify">{{description}}</div>
+        {{/if}}
+        {{#if keywords}}
+        <div class="flex items-center gap-2 flex-wrap mb-4">
+            {{#each keywords}}
+            <div class="px-3 py-1 rounded-full bg-neutral-100 text-2xs">
+                <strong>{{.}}</strong>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="flex items-center gap-4 w-full text-neutral-700">
+            {{#if url}}
+            <a href="{{url}}" target="_blank" class="flex items-center gap-1 group">
+                <div class="flex items-center text-sm">
+                    <svg width="1em" height="1em"><use xlink:href="/sprite.svg#link"></use></svg>
+                </div>
+                <div class="font-bold text-xs group-hover:underline">{{url}}</div>
+            </a>
+            {{/if}}
+            {{#if githubUrl}}
+            <a href="{{githubUrl}}" target="_blank" class="flex items-center gap-1 group">
+                <div class="flex items-center text-sm">
+                    <svg width="1em" height="1em"><use xlink:href="/sprite.svg#code"></use></svg>
+                </div>
+                <div class="font-bold text-xs group-hover:underline">{{githubUrl}}</div>
+            </a>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+</div>
