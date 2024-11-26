@@ -1,0 +1,26 @@
+---
+name: "Skills"
+description: "List your skills and proficiencies."
+icon: "code-block"
+fields:
+  - name: "items"
+    type: "tags"
+    description: "List of skills and proficiencies."
+---
+<div class="" data-block-id="skills">
+    <div class="mb-4">
+        <div class="flex items-center gap-2 w-full">
+            <div class="flex items-center text-4xl">
+                <svg width="1em" height="1em"><use xlink:href="sprite.svg#code-block"></use></svg>
+            </div>
+            <div class="font-bold text-3xl">Skills</div>
+        </div>
+    </div>
+    <div class="flex items-center gap-2 flex-wrap">
+    {{#each items}}
+        <div class="px-3 py-1 rounded-full text-xs bg-neutral-100">
+            <strong>{{.}}</strong>
+        </div>
+    {{/each}}
+    </div>
+</div>

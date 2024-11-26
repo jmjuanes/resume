@@ -1,0 +1,20 @@
+---
+name: "About"
+description: "Include a brief introduction about yourself. This block is typically displayed at the top of your resume."
+icon: "user-circle"
+fields:
+  - name: "content"
+    type: "textarea"
+    description: "A brief introduction about yourself. You can include your career objectives, a summary of your skills, or any other information you'd like to share."
+---
+<div class="" data-block-id="about">
+    <div class="mb-4">
+        <div class="flex items-center gap-2 w-full">
+            <div class="flex items-center text-4xl">
+                <svg width="1em" height="1em"><use xlink:href="sprite.svg#info-circle"></use></svg>
+            </div>
+            <div class="font-bold text-3xl">About me</div>
+        </div>
+    </div>
+    <div class="">{{content}}</div>
+</div>

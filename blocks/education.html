@@ -1,0 +1,68 @@
+---
+name: "Education"
+description: "List your educational background and qualifications."
+icon: "graduation-hat"
+fields:
+  - name: "items"
+    type: "list"
+    description: "List of educational qualifications."
+    fields:
+      - name: "institution"
+        type: "text"
+        description: "Name of the institution or university."
+      - name: "degree"
+        type: "text"
+        description: "Degree or qualification obtained."
+      - name: "start"
+        type: "text"
+        description: "Start date or year of enrollment."
+      - name: "end"
+        type: "text"
+        description: "End date or year of graduation (leave blank if ongoing)."
+      - name: "description"
+        type: "textarea"
+        description: "Additional details or description."
+      - name: "keywords"
+        type: "tags"
+        description: "List of tags or keywords."
+---
+<div class="" data-block-id="education">
+    <div class="mb-4">
+        <div class="flex items-center gap-2 w-full">
+            <div class="flex items-center text-4xl">
+                <svg width="1em" height="1em"><use xlink:href="sprite.svg#graduation-hat"></use></svg>
+            </div>
+            <div class="font-bold text-3xl">Education</div>
+        </div>
+    </div>
+    {{#each items}}
+    <div class="mb-6">
+        <div class="flex justify-between items-start gap-4 w-full">
+            <div class="flex items-center gap-2">
+                <div class="font-bold">{{degree}}</div>
+                {{#if institution}}
+                <div class="text-sm text-neutral-700 font-bold">·</div>
+                <div class="text-sm text-neutral-700">{{institution}}</div>
+                {{/if}}
+            </div>
+            <div class="flex items-center gap-1 shrink-0 justify-end text-sm">
+                <div class="font-bold">{{start}}</div>
+                <div class="flex items-center text-neutral-700">-</div>
+                <div class="font-bold">{{end}}{{#unless end}}Present{{/unless}}</div>
+            </div>
+        </div>
+        {{#if description}}
+        <div class="text-sm mb-4 text-justify">{{description}}</div>
+        {{/if}}
+        {{#if keywords}}
+        <div class="flex items-center gap-2 flex-wrap">
+            {{#each keywords}}
+            <div class="px-3 py-1 rounded-full bg-neutral-100 text-2xs">
+                <strong>{{.}}</strong>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>

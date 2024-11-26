@@ -14,10 +14,10 @@
     },
     "dependencies": {
         "@josemi-icons/svg": "^0.6.1",
-        "lowcss": "^0.24.0"
+        "lowcss": "^0.26.0",
+        "mikel": "^0.13.0"
     },
     "devDependencies": {
-        "js-yaml": "^4.1.0",
-        "mikel": "^0.10.0"
+        "front-matter": "^4.0.2"
     }
 }
